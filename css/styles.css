@@ -299,11 +299,12 @@ button {
    ============================================================ */
 .navbar {
   position: fixed;
-  inset-inline: 0;
+  /* inset-inline: 0; */
   top: 0;
   z-index: 50;
   transition: padding 0.5s ease;
   padding-block: 1.25rem;
+  width: 100%;
 }
 
 .navbar.scrolled {
