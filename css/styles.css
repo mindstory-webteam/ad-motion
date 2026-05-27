@@ -2114,3 +2114,13 @@ svg {
   display: inline-block;
   vertical-align: middle;
 }
+
+
+@media (max-width: 768px) {
+  .footer-col-title{
+    text-align: left;
+  }
+  .footer-col a{
+    text-align: left;
+  }
+}
