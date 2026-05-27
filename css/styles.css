@@ -2124,3 +2124,132 @@ svg {
     text-align: left;
   }
 }
+
+@media (max-width: 768px) {
+
+  .home {
+    padding-top: 7rem;
+    overflow: hidden;
+  }
+
+  .hero-grid,
+  .nation-grid,
+  .services-grid,
+  .about-grid,
+  .why-grid {
+    grid-template-columns: 1fr !important;
+    gap: 1.5rem;
+  }
+
+  .hero-title,
+  .nation-title,
+  .about-title,
+  .section-title {
+    font-size: 2rem !important;
+    line-height: 1.15;
+    word-break: break-word;
+  }
+
+  .hero-desc,
+  .nation-desc,
+  .about-desc,
+  .services-side-desc {
+    font-size: 0.95rem;
+    line-height: 1.7;
+  }
+
+  .hero-actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .btn-primary,
+  .btn-outline {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .hero-stats {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .hero-stat {
+    padding: 0.85rem;
+  }
+
+  /* NAVBAR */
+  .navbar {
+    padding-inline: 0.5rem;
+  }
+
+  .navbar .nav-inner {
+    padding: 0.7rem 0.8rem;
+  }
+
+  .nav-logo-icon img {
+    width: 120px;
+  }
+
+  .nav-mobile {
+    width: 100%;
+    overflow: hidden;
+  }
+
+  /* NATION SECTION */
+  .nation-features {
+    grid-template-columns: 1fr 1fr;
+    gap: 0.6rem;
+  }
+
+  .nation-feature {
+    padding: 0.7rem;
+    min-width: 0;
+  }
+
+  .nation-feature span:last-child {
+    font-size: 0.78rem;
+    line-height: 1.4;
+    word-break: break-word;
+  }
+
+  .nation-tv {
+    padding: 0.5rem;
+  }
+
+  .nation-tv-screen {
+    border-radius: 1rem;
+    overflow: hidden;
+  }
+
+  .nation-tv-screen img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+  }
+
+  .nation-cloud-card {
+    display: none !important;
+  }
+
+  /* FIX OVERFLOWING CARDS */
+  .glass,
+  .glass-strong,
+  .service-card,
+  .about-card,
+  .why-card,
+  .compare-table {
+    width: 100%;
+    overflow: hidden;
+  }
+
+  /* TABLE FIX */
+  .compare-table {
+    overflow-x: auto;
+  }
+
+  /* IMAGES */
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+}
