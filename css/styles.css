@@ -426,6 +426,12 @@ button {
   margin-top: 0.25rem;
 }
 
+@media (max-width: 768px) {
+  .nav-logo-icon img {
+    width: 150px;
+  }
+}
+
 @media (min-width: 768px) {
 
   .nav-links,
@@ -449,10 +455,11 @@ button {
 }
 
 @media (max-width: 768px) {
-  .nav-cta{
-    display: none!important;
+  .nav-cta {
+    display: none !important;
   }
 }
+
 @media (min-width: 768px) {
   .home {
     padding-top: 8rem;
