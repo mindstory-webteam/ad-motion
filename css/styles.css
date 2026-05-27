@@ -2231,16 +2231,6 @@ svg {
     display: none !important;
   }
 
-  /* FIX OVERFLOWING CARDS */
-  .glass,
-  .glass-strong,
-  .service-card,
-  .about-card,
-  .why-card,
-  .compare-table {
-    width: 100%;
-    overflow: hidden;
-  }
 
   /* TABLE FIX */
   .compare-table {
