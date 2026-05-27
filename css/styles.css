@@ -2114,3 +2114,280 @@ svg {
   display: inline-block;
   vertical-align: middle;
 }
+
+
+html,
+body {
+  overflow-x: hidden;
+  width: 100%;
+}
+
+img,
+picture,
+video,
+canvas,
+svg {
+  max-width: 100%;
+  display: block;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.hero-title {
+  font-size: clamp(2.5rem, 8vw, 5rem);
+  line-height: 1;
+}
+
+.hero-description {
+  width: 100%;
+  max-width: 680px;
+}
+
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.hero-stats {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.nav-links {
+  gap: 1rem;
+}
+
+/* ========================================
+   TABLET
+======================================== */
+
+@media (max-width: 1024px) {
+
+  .container,
+  .wrapper,
+  .section-container {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+
+  .hero-grid,
+  .about-grid,
+  .services-grid,
+  .feature-grid,
+  .contact-grid,
+  .footer-grid {
+    grid-template-columns: 1fr !important;
+    gap: 2rem;
+  }
+
+  .hero-image {
+    max-width: 100%;
+    margin: auto;
+  }
+
+  .hero-card-live,
+  .hero-card-routes {
+    transform: scale(0.9);
+  }
+}
+
+/* ========================================
+   MOBILE
+======================================== */
+
+@media (max-width: 768px) {
+
+  body {
+    overflow-x: hidden;
+  }
+
+  section {
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+  }
+
+  .container,
+  .wrapper,
+  .section-container {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  /* ---------- Navigation ---------- */
+
+  .nav-links,
+  .nav-cta {
+    display: none;
+  }
+
+  .nav-menu-btn,
+  .mobile-menu-toggle {
+    display: flex;
+  }
+
+  .navbar,
+  .header {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+  }
+
+  /* ---------- Hero ---------- */
+
+  .hero {
+    min-height: auto;
+    padding-top: 7rem;
+    text-align: center;
+  }
+
+  .hero-content {
+    align-items: center;
+  }
+
+  .hero-title {
+    font-size: clamp(2.2rem, 10vw, 4rem);
+    line-height: 1;
+  }
+
+  .hero-description {
+    font-size: 1rem;
+    line-height: 1.7;
+  }
+
+  .hero-actions {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .hero-actions a,
+  .hero-actions button,
+  .btn,
+  .button {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .hero-image {
+    margin-top: 2rem;
+  }
+
+  .hero-card-live {
+    top: 0.5rem;
+    left: 0.5rem;
+    transform: scale(0.75);
+  }
+
+  .hero-card-routes {
+    right: 0.5rem;
+    bottom: 0.5rem;
+    transform: scale(0.75);
+  }
+
+  .hero-stats {
+    justify-content: center;
+  }
+
+  .hero-stat,
+  .stat-card {
+    width: calc(50% - 0.5rem);
+  }
+
+  /* ---------- Cards ---------- */
+
+  .card,
+  .glass-card,
+  .feature-card,
+  .service-card {
+    padding: 1.25rem;
+    border-radius: 1.25rem;
+  }
+
+  /* ---------- Grid ---------- */
+
+  .grid,
+  .services-grid,
+  .feature-grid,
+  .cards-grid,
+  .footer-grid {
+    grid-template-columns: 1fr !important;
+  }
+
+  /* ---------- Text ---------- */
+
+  h1 {
+    font-size: 2.5rem;
+  }
+
+  h2 {
+    font-size: 2rem;
+  }
+
+  h3 {
+    font-size: 1.5rem;
+  }
+
+  p {
+    font-size: 0.95rem;
+  }
+
+  /* ---------- Spacing ---------- */
+
+  .py-24,
+  .py-28,
+  .py-32 {
+    padding-top: 4rem !important;
+    padding-bottom: 4rem !important;
+  }
+
+  .gap-16,
+  .gap-20 {
+    gap: 2rem !important;
+  }
+
+  /* ---------- Footer ---------- */
+
+  footer {
+    text-align: center;
+  }
+}
+
+/* ========================================
+   SMALL MOBILE DEVICES
+======================================== */
+
+@media (max-width: 480px) {
+
+  .hero-title {
+    font-size: 2rem;
+  }
+
+  .hero-description {
+    font-size: 0.95rem;
+  }
+
+  .hero-card-live,
+  .hero-card-routes {
+    transform: scale(0.65);
+  }
+
+  .hero-stat,
+  .stat-card {
+    width: 100%;
+  }
+
+  .btn,
+  .button {
+    padding: 0.9rem 1rem;
+    font-size: 0.95rem;
+  }
+
+  .card,
+  .glass-card,
+  .feature-card,
+  .service-card {
+    padding: 1rem;
+  }
+}
