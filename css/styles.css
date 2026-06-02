@@ -614,7 +614,7 @@ button {
 
 .hero-img-wrap {
   position: relative;
-  aspect-ratio: 5/6;
+  aspect-ratio: 8/6;
   overflow: hidden;
   border-radius: 1.5rem;
 }
@@ -622,7 +622,7 @@ button {
 .hero-img-wrap img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: contain;
 }
 
 .hero-img-overlay {
