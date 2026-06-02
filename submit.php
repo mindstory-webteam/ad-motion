@@ -139,7 +139,7 @@ margin:0 0 10px;
 font-size:24px;
 font-weight:700;
 color:#78D9FF;">
-🚀 New Lead Received
+New Lead Received
 </h2>
 
 <p style="
