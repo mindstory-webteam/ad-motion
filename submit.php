@@ -52,7 +52,7 @@ if ($errorMSG == "") {
 
     // EMAIL SETTINGS
     $EmailTo = "janavalsan@mindstory.in"; // CHANGE THIS
-    $subject = "New Consultation Request";
+    $subject = "New AdMotion Consultation Request";
 
     // HTML EMAIL BODY
     $Body = '
@@ -62,18 +62,16 @@ if ($errorMSG == "") {
         <meta charset="UTF-8">
         <title>New Consultation Request</title>
     </head>
-    <body style="margin:0;padding:0;background:#f4f4f4;font-family:Arial,sans-serif;">
-
+    <body style="margin:0;padding:0;background:#150917;font-family:Arial,sans-serif;">
         <table width="100%" cellpadding="0" cellspacing="0" style="padding:30px 0;background:#f4f4f4;">
             <tr>
                 <td align="center">
 
-                    <table width="620" cellpadding="0" cellspacing="0"
-                        style="background:#ffffff;border-radius:8px;overflow:hidden;">
+                   <table width="620" cellpadding="0" cellspacing="0"
+                   style="background:#ffffff;border-radius:24px;overflow:hidden;box-shadow:0 20px 60px rgba(0,0,0,.15);">
 
                         <tr>
-                            <td style="background:#992380;padding:24px 40px;">
-                                <h2 style="margin:0;color:#fff;">
+                        <td style="background:linear-gradient(135deg,#992380 0%,#7a1d68 50%,#4d133f 100%);padding:32px 40px;">                                <h2 style="margin:0;color:#fff;">
                                     New Consultation Request
                                 </h2>
                                 <p style="margin:8px 0 0;color:#e9c6e5;font-size:13px;">

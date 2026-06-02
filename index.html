@@ -923,6 +923,7 @@
                 </svg>
               </button>
             </form>
+            <div id="form-message"></div>
           </div>
         </div>
       </div>
@@ -1006,6 +1007,68 @@
   </footer>
 
   <script src="js/main.js" defer></script>
+  <script>
+document.getElementById('contact-form').addEventListener('submit', async function(e){
+
+    e.preventDefault();
+
+    const form = this;
+    const submitBtn = document.getElementById('submit-btn');
+    const messageBox = document.getElementById('form-message');
+
+    submitBtn.disabled = true;
+    submitBtn.innerHTML = 'Sending...';
+
+    try {
+
+        const response = await fetch('mail.php', {
+            method: 'POST',
+            body: new FormData(form)
+        });
+
+        const result = await response.text();
+
+        if(result.trim() === 'success'){
+
+            messageBox.innerHTML = `
+                <div class="success-message">
+                    Thank you! Your consultation request has been submitted successfully. Our team will contact you shortly.
+                </div>
+            `;
+
+            form.reset();
+
+        } else {
+
+            messageBox.innerHTML = `
+                <div class="error-message">
+                    ${result}
+                </div>
+            `;
+        }
+
+    } catch(error){
+
+        messageBox.innerHTML = `
+            <div class="error-message">
+                Something went wrong. Please try again later.
+            </div>
+        `;
+    }
+
+    submitBtn.disabled = false;
+
+    submitBtn.innerHTML = `
+        Request Free Consultation
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+        stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="5" y1="12" x2="19" y2="12"/>
+            <polyline points="12 5 19 12 12 19"/>
+        </svg>
+    `;
+
+});
+</script>
 
 </body>
 

@@ -2249,3 +2249,27 @@ svg {
     padding: 0;
   }
 }
+
+#form-message{
+    margin-top:20px;
+}
+
+.success-message{
+    background:rgba(153,35,128,.12);
+    border:1px solid rgba(153,35,128,.3);
+    color:#ffffff;
+    padding:16px 20px;
+    border-radius:16px;
+    font-size:15px;
+    text-align:center;
+}
+
+.error-message{
+    background:rgba(255,70,70,.12);
+    border:1px solid rgba(255,70,70,.3);
+    color:#ffb4b4;
+    padding:16px 20px;
+    border-radius:16px;
+    font-size:15px;
+    text-align:center;
+}
