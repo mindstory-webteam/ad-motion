@@ -270,26 +270,7 @@ line-height:1.8;">
 </td>
 </tr>
 
-<!-- CTA BUTTON -->
-<tr>
-<td style="padding:0 40px 35px;">
 
-<a href="mailto:' .
-    $email .
-    '" style="
-display:inline-block;
-padding:14px 28px;
-background:linear-gradient(135deg,#78D9FF,#4CCFCF);
-color:#0A1324;
-font-weight:700;
-font-size:14px;
-text-decoration:none;
-border-radius:12px;">
-Reply to Client
-</a>
-
-</td>
-</tr>
 
 <!-- FOOTER -->
 <tr>
