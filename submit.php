@@ -270,8 +270,6 @@ line-height:1.8;">
 </td>
 </tr>
 
-
-
 <!-- FOOTER -->
 <tr>
 <td style="
