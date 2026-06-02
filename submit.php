@@ -61,7 +61,7 @@ if (empty($message)) {
     exit();
 }
 
-$EmailTo = "janavalsan@mindstory.in";
+$EmailTo = "hello@admotionmedia.in";
 $subject = "New AdMotion Consultation Request";
 
 $datetime = date("d M Y, h:i A");
