@@ -902,15 +902,20 @@
             <p>We'll respond within one business day.</p>
             <form id="contact-form">
               <div class="form-grid">
-                <label class="form-field"><span>Full name</span><input type="text" placeholder="Your name"></label>
+                <!-- <label class="form-field"><span>Full name</span><input type="text" placeholder="Your name"></label>
                 <label class="form-field"><span>Company</span><input type="text" placeholder="Brand or agency"></label>
                 <label class="form-field"><span>Email</span><input type="email" placeholder="you@brand.com"></label>
-                <label class="form-field"><span>Phone</span><input type="tel" placeholder="+91"></label>
+                <label class="form-field"><span>Phone</span><input type="tel" placeholder="+91"></label> -->
+                <input type="text" name="name" placeholder="Your name" required>
+                <input type="text" name="company" placeholder="Brand or agency" required>
+                <input type="email" name="email" placeholder="you@brand.com" required>
+                <input type="tel" name="phone" placeholder="+91" required>
               </div>
               <div class="form-textarea">
                 <label class="form-field">
                   <span>Tell us about your goals</span>
-                  <textarea rows="4" placeholder="Routes, districts, timing, KPIs…"></textarea>
+                  <textarea name="message" rows="4" placeholder="Routes, districts, timing, KPIs..."
+                    required></textarea>
                 </label>
               </div>
               <button type="submit" class="form-submit shadow-glow" id="submit-btn">
