@@ -87,7 +87,7 @@ font-family:Arial,Helvetica,sans-serif;">
 <td align="center">
 
 <table width="650" cellpadding="0" cellspacing="0" border="0" style="
-max-width:650px;
+max-width:90%;
 background:#162033;
 border-radius:24px;
 overflow:hidden;
