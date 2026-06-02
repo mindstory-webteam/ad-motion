@@ -1,14 +1,13 @@
-```php
 <?php
 
-header('Content-Type: application/json');
+header("Content-Type: application/json");
 
 if ($_SERVER["REQUEST_METHOD"] !== "POST") {
     echo json_encode([
         "status" => "error",
-        "message" => "Invalid request."
+        "message" => "Invalid request.",
     ]);
-    exit;
+    exit();
 }
 
 function clean_input($data)
@@ -16,50 +15,50 @@ function clean_input($data)
     return htmlspecialchars(strip_tags(trim($data)));
 }
 
-$name    = clean_input($_POST['name'] ?? '');
-$company = clean_input($_POST['company'] ?? '');
-$email   = clean_input($_POST['email'] ?? '');
-$phone   = clean_input($_POST['phone'] ?? '');
-$message = clean_input($_POST['message'] ?? '');
+$name = clean_input($_POST["name"] ?? "");
+$company = clean_input($_POST["company"] ?? "");
+$email = clean_input($_POST["email"] ?? "");
+$phone = clean_input($_POST["phone"] ?? "");
+$message = clean_input($_POST["message"] ?? "");
 
 if (empty($name)) {
     echo json_encode([
         "status" => "error",
-        "message" => "Please enter your name."
+        "message" => "Please enter your name.",
     ]);
-    exit;
+    exit();
 }
 
 if (empty($company)) {
     echo json_encode([
         "status" => "error",
-        "message" => "Please enter company name."
+        "message" => "Please enter company name.",
     ]);
-    exit;
+    exit();
 }
 
 if (empty($email) || !filter_var($email, FILTER_VALIDATE_EMAIL)) {
     echo json_encode([
         "status" => "error",
-        "message" => "Please enter a valid email address."
+        "message" => "Please enter a valid email address.",
     ]);
-    exit;
+    exit();
 }
 
 if (empty($phone)) {
     echo json_encode([
         "status" => "error",
-        "message" => "Please enter phone number."
+        "message" => "Please enter phone number.",
     ]);
-    exit;
+    exit();
 }
 
 if (empty($message)) {
     echo json_encode([
         "status" => "error",
-        "message" => "Please enter your requirements."
+        "message" => "Please enter your requirements.",
     ]);
-    exit;
+    exit();
 }
 
 $EmailTo = "janavalsan@mindstory.in";
@@ -67,7 +66,8 @@ $subject = "New AdMotion Consultation Request";
 
 $datetime = date("d M Y, h:i A");
 
-$Body = '
+$Body =
+    '
 <!DOCTYPE html>
 <html>
 <head>
@@ -101,27 +101,20 @@ padding:45px 40px;
 background:linear-gradient(135deg,#78D9FF 0%,#4CCFCF 100%);
 ">
 
-<h1 style="
-margin:0;
-font-size:34px;
-font-weight:700;
-color:#0A1324;
-letter-spacing:1px;">
-ADMOTION
-</h1>
-
 <p style="
 margin:10px 0 0;
 font-size:15px;
 color:#17384A;">
-New Consultation Request
+New enquiry from website 
 </p>
 
 <p style="
 margin:8px 0 0;
 font-size:13px;
 color:#17384A;">
-'.$datetime.'
+' .
+    $datetime .
+    '
 </p>
 
 </td>
@@ -185,7 +178,9 @@ padding:16px;
 background:#162033;
 color:#F4F8FB;
 border-bottom:1px solid rgba(255,255,255,.08);">
-'.$name.'
+' .
+    $name .
+    '
 </td>
 </tr>
 
@@ -203,7 +198,9 @@ padding:16px;
 background:#162033;
 color:#F4F8FB;
 border-bottom:1px solid rgba(255,255,255,.08);">
-'.$company.'
+' .
+    $company .
+    '
 </td>
 </tr>
 
@@ -221,7 +218,9 @@ padding:16px;
 background:#162033;
 color:#F4F8FB;
 border-bottom:1px solid rgba(255,255,255,.08);">
-'.$email.'
+' .
+    $email .
+    '
 </td>
 </tr>
 
@@ -239,7 +238,9 @@ padding:16px;
 background:#162033;
 color:#F4F8FB;
 border-bottom:1px solid rgba(255,255,255,.08);">
-'.$phone.'
+' .
+    $phone .
+    '
 </td>
 </tr>
 
@@ -258,7 +259,9 @@ padding:16px;
 background:#162033;
 color:#F4F8FB;
 line-height:1.8;">
-'.nl2br($message).'
+' .
+    nl2br($message) .
+    '
 </td>
 </tr>
 
@@ -271,7 +274,9 @@ line-height:1.8;">
 <tr>
 <td style="padding:0 40px 35px;">
 
-<a href="mailto:'.$email.'" style="
+<a href="mailto:' .
+    $email .
+    '" style="
 display:inline-block;
 padding:14px 28px;
 background:linear-gradient(135deg,#78D9FF,#4CCFCF);
@@ -306,7 +311,6 @@ ADMOTION
 font-size:13px;
 line-height:1.8;
 color:#B5C1D1;">
-Digital Marketing & Creative Solutions
 <br>
 Generated automatically from the website enquiry form.
 </div>
@@ -323,25 +327,21 @@ Generated automatically from the website enquiry form.
 </body>
 </html>';
 
-$headers  = "MIME-Version: 1.0\r\n";
+$headers = "MIME-Version: 1.0\r\n";
 $headers .= "Content-Type: text/html; charset=UTF-8\r\n";
 $headers .= "From: AdMotion <info@yourdomain.com>\r\n";
-$headers .= "Reply-To: ".$email."\r\n";
+$headers .= "Reply-To: " . $email . "\r\n";
 
 if (mail($EmailTo, $subject, $Body, $headers)) {
-
     echo json_encode([
         "status" => "success",
-        "message" => "Thank you! Your request has been submitted successfully."
+        "message" => "Thank you! Your request has been submitted successfully.",
     ]);
-
 } else {
-
     echo json_encode([
         "status" => "error",
-        "message" => "Unable to send email. Please try again later."
+        "message" => "Unable to send email. Please try again later.",
     ]);
-
 }
 ?>
-```
+
