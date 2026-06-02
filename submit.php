@@ -51,7 +51,7 @@ if ($errorMSG == "") {
     $datetime = date("d M Y, h:i A");
 
     // EMAIL SETTINGS
-    $EmailTo = "your@email.com"; // CHANGE THIS
+    $EmailTo = "janavalsan@mindstory.in"; // CHANGE THIS
     $subject = "New Consultation Request";
 
     // HTML EMAIL BODY
