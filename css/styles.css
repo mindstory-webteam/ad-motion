@@ -1487,13 +1487,16 @@ button {
   overflow: hidden;
   border-radius: 1.5rem;
   max-height: 560px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .network-map-wrap img {
   width: 100%;
   height: auto;
   aspect-ratio: 1;
-  object-fit: cover;
+  object-fit: contain;
   object-position: bottom;
 }
 
