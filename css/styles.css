@@ -2255,21 +2255,19 @@ svg {
 }
 
 .success-message{
-    background:rgba(153,35,128,.12);
-    border:1px solid rgba(153,35,128,.3);
-    color:#ffffff;
     padding:16px 20px;
-    border-radius:16px;
-    font-size:15px;
+    border-radius:14px;
+    background:rgba(153,35,128,.15);
+    border:1px solid rgba(153,35,128,.3);
+    color:#fff;
     text-align:center;
 }
 
 .error-message{
-    background:rgba(255,70,70,.12);
-    border:1px solid rgba(255,70,70,.3);
-    color:#ffb4b4;
     padding:16px 20px;
-    border-radius:16px;
-    font-size:15px;
+    border-radius:14px;
+    background:rgba(255,0,0,.12);
+    border:1px solid rgba(255,0,0,.2);
+    color:#ffbdbd;
     text-align:center;
 }

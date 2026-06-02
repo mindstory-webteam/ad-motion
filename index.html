@@ -902,10 +902,14 @@
             <p>We'll respond within one business day.</p>
             <form id="contact-form" action="submit.php" method="POST">
               <div class="form-grid">
-                <label class="form-field"><span>Full name</span><input type="text" name="name" placeholder="Your name" required></label>
-                <label class="form-field"><span>Company</span><input type="text" name="company" placeholder="Brand or agency" required></label>
-                <label class="form-field"><span>Email</span><input type="email" name="email" placeholder="you@brand.com" required></label>
-                <label class="form-field"><span>Phone</span><input type="tel" name="phone" placeholder="+91" required></label>
+                <label class="form-field"><span>Full name</span><input type="text" name="name" placeholder="Your name"
+                    required></label>
+                <label class="form-field"><span>Company</span><input type="text" name="company"
+                    placeholder="Brand or agency" required></label>
+                <label class="form-field"><span>Email</span><input type="email" name="email" placeholder="you@brand.com"
+                    required></label>
+                <label class="form-field"><span>Phone</span><input type="tel" name="phone" placeholder="+91"
+                    required></label>
               </div>
               <div class="form-textarea">
                 <label class="form-field">
@@ -1008,67 +1012,50 @@
 
   <script src="js/main.js" defer></script>
   <script>
-document.getElementById('contact-form').addEventListener('submit', async function(e){
+    document.getElementById('contact-form').addEventListener('submit', async function (e) {
 
-    e.preventDefault();
+      e.preventDefault();
 
-    const form = this;
-    const submitBtn = document.getElementById('submit-btn');
-    const messageBox = document.getElementById('form-message');
+      const form = this;
+      const submitBtn = document.getElementById('submit-btn');
+      const messageBox = document.getElementById('form-message');
 
-    submitBtn.disabled = true;
-    submitBtn.innerHTML = 'Sending...';
+      submitBtn.disabled = true;
+      submitBtn.innerText = 'Sending...';
 
-    try {
+      try {
 
         const response = await fetch('mail.php', {
-            method: 'POST',
-            body: new FormData(form)
+          method: 'POST',
+          body: new FormData(form)
         });
 
-        const result = await response.text();
+        const data = await response.json();
 
-        if(result.trim() === 'success'){
+        if (data.status === 'success') {
 
-            messageBox.innerHTML = `
-                <div class="success-message">
-                    Thank you! Your consultation request has been submitted successfully. Our team will contact you shortly.
-                </div>
-            `;
+          messageBox.innerHTML =
+            '<div class="success-message">' + data.message + '</div>';
 
-            form.reset();
+          form.reset();
 
         } else {
 
-            messageBox.innerHTML = `
-                <div class="error-message">
-                    ${result}
-                </div>
-            `;
+          messageBox.innerHTML =
+            '<div class="error-message">' + data.message + '</div>';
         }
 
-    } catch(error){
+      } catch (error) {
 
-        messageBox.innerHTML = `
-            <div class="error-message">
-                Something went wrong. Please try again later.
-            </div>
-        `;
-    }
+        messageBox.innerHTML =
+          '<div class="error-message">Something went wrong. Please try again.</div>';
+      }
 
-    submitBtn.disabled = false;
+      submitBtn.disabled = false;
+      submitBtn.innerHTML = 'Request Free Consultation';
+    });
+  </script>
 
-    submitBtn.innerHTML = `
-        Request Free Consultation
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-        stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <line x1="5" y1="12" x2="19" y2="12"/>
-            <polyline points="12 5 19 12 12 19"/>
-        </svg>
-    `;
-
-});
-</script>
 
 </body>
 
