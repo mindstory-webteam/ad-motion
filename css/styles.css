@@ -2285,3 +2285,8 @@ svg {
   flex-direction: row;
   flex-wrap: nowrap;
 }
+@media (max-width: 768px) {
+  .footer-bottom{
+    text-align: center;
+  }
+}
