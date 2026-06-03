@@ -89,6 +89,23 @@ document.addEventListener('DOMContentLoaded', () => {
   initNavbar();
   initHeroChart();
   initFooterYear();
+
+  // If arriving from another page with a hash (e.g. index.html#contact),
+  // scroll to the target then strip the hash from the URL cleanly.
+  if (window.location.hash) {
+    const target = document.querySelector(window.location.hash);
+    if (target) {
+      // Small delay so the page has rendered before scrolling
+      setTimeout(() => {
+        target.scrollIntoView({ behavior: 'smooth' });
+        history.replaceState(null, '', window.location.pathname);
+      }, 100);
+    } else {
+      // Hash has no matching element — just clean the URL
+      history.replaceState(null, '', window.location.pathname);
+    }
+  }
+
   // Small delay to let DOM settle before running observers
   requestAnimationFrame(() => {
     initReveal();
