@@ -2120,10 +2120,11 @@ svg {
 
 
 @media (max-width: 768px) {
-  .footer-col-title{
+  .footer-col-title {
     text-align: left;
   }
-  .footer-col a{
+
+  .footer-col a {
     text-align: left;
   }
 }
@@ -2235,8 +2236,7 @@ svg {
   }
 
 
-  TABLE FIX
-  .compare-table {
+  TABLE FIX .compare-table {
     overflow-x: auto;
   }
 
@@ -2245,29 +2245,43 @@ svg {
     max-width: 100%;
     height: auto;
   }
-  header .container{
+
+  header .container {
     padding: 0;
   }
 }
 
-#form-message{
-    margin-top:20px;
+#form-message {
+  margin-top: 20px;
 }
 
-.success-message{
-    padding:16px 20px;
-    border-radius:14px;
-    background:rgba(153,35,128,.15);
-    border:1px solid rgba(153,35,128,.3);
-    color:#fff;
-    text-align:center;
+.success-message {
+  padding: 16px 20px;
+  border-radius: 14px;
+  background: rgba(153, 35, 128, .15);
+  border: 1px solid rgba(153, 35, 128, .3);
+  color: #fff;
+  text-align: center;
 }
 
-.error-message{
-    padding:16px 20px;
-    border-radius:14px;
-    background:rgba(255,0,0,.12);
-    border:1px solid rgba(255,0,0,.2);
-    color:#ffbdbd;
-    text-align:center;
+.error-message {
+  padding: 16px 20px;
+  border-radius: 14px;
+  background: rgba(255, 0, 0, .12);
+  border: 1px solid rgba(255, 0, 0, .2);
+  color: #ffbdbd;
+  text-align: center;
+}
+
+.footer-image-sb img {
+  height: auto;
+  width: 90px;
+  object-fit: contain;
+}
+
+.footer-image-sb {
+  display: flex;
+  gap: 5px;
+  flex-direction: row;
+  flex-wrap: nowrap;
 }
