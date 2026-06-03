@@ -433,7 +433,7 @@ button {
   }
 }
 
-@media (min-width: 768px) {
+@media (min-width: 856px) {
 
   .nav-links,
   .nav-cta {
@@ -1551,7 +1551,7 @@ button {
   align-items: start;
 }
 
-@media (min-width: 768px) {
+@media (min-width: 856px) {
   .pricing-grid {
     grid-template-columns: repeat(3, 1fr);
     align-items: center;
