@@ -2284,9 +2284,16 @@ svg {
   gap: 5px;
   flex-direction: row;
   flex-wrap: nowrap;
+  justify-content: center;
+  align-items: center;
 }
+
+.footer-image-sb a {
+  height: max-content;
+}
+
 @media (max-width: 768px) {
-  .footer-bottom{
+  .footer-bottom {
     text-align: center;
   }
 }
