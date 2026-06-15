@@ -1,33 +1,7 @@
 const iconMenu = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="18" x2="21" y2="18"/></svg>`;
 const iconX    = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>`;
 
-
-function initNavbar() {
-  const nav    = document.getElementById('navbar');
-  const inner  = document.getElementById('nav-inner');
-  const btn    = document.getElementById('menu-btn');
-  const mobile = document.getElementById('nav-mobile');
-  if (!nav || !inner || !btn || !mobile) return;
-
-  btn.innerHTML = iconMenu;
-
-  // Mobile toggle
-  let open = false;
-  btn.addEventListener('click', () => {
-    open = !open;
-    btn.innerHTML = open ? iconX : iconMenu;
-    mobile.classList.toggle('open', open);
-  });
-
-  // Close on link click
-  mobile.querySelectorAll('.mobile-link').forEach(a => {
-    a.addEventListener('click', () => {
-      open = false;
-      btn.innerHTML = iconMenu;
-      mobile.classList.remove('open');
-    });
-  });
-}
+const submitBtnOriginalHTML = `Request Free Consultation <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12" /><polyline points="12 5 19 12 12 19" /></svg>`;
 
 // Hero chart bars 
 function initHeroChart() {

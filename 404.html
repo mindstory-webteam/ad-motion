@@ -4,7 +4,9 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>404 — Page Not Found | aDmotion Media</title>
+  <title>404 Page Not Found | aDmotion Media</title>
+  <meta name="robots" content="noindex, follow" />
+  <meta name="description" content="The page you are looking for might have been removed, had its name changed, or is temporarily unavailable." />
   <link rel="shortcut icon" type="image/x-icon" href="assets/fav-icon.png" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -61,20 +63,35 @@
   <header class="navbar" id="navbar">
     <div class="container">
       <nav class="nav-inner glass-strong" id="nav-inner">
-        <a href="index.html" class="nav-logo">
+        <a href="/" class="nav-logo">
           <span class="nav-logo-icon">
             <img src="assets/logo.png" alt="aDmotion Media">
           </span>
         </a>
         <ul class="nav-links">
-          <li><a href="index.html#about">About</a></li>
-          <li><a href="index.html#services">Services</a></li>
-          <li><a href="index.html#why">Why Us</a></li>
-          <li><a href="index.html#plans">Plans</a></li>
-          <li><a href="index.html#contact">Contact</a></li>
+          <li><a href="/#home">Home</a></li>
+          <li><a href="/#about">About</a></li>
+          <li><a href="/#services">Services</a></li>
+          <li><a href="/#why">Why Us</a></li>
+          <li><a href="/#plans">Plans</a></li>
+          <li><a href="/#contact">Contact</a></li>
+          <li><a href="bus-route">Bus Routes</a></li>
         </ul>
-        <a href="index.html#contact" class="nav-cta btn-primary">Start Campaign</a>
+        <a href="/#contact" class="nav-cta btn-primary">Start Campaign</a>
+        <button class="nav-menu-btn glass" id="menu-btn" aria-label="Menu"></button>
       </nav>
+      <div class="nav-mobile glass-strong" id="nav-mobile">
+        <ul>
+          <li><a href="/#home" class="mobile-link">Home</a></li>
+          <li><a href="/#about" class="mobile-link">About</a></li>
+          <li><a href="/#services" class="mobile-link">Services</a></li>
+          <li><a href="/#why" class="mobile-link">Why Us</a></li>
+          <li><a href="/#plans" class="mobile-link">Plans</a></li>
+          <li><a href="/#contact" class="mobile-link">Contact</a></li>
+          <li><a href="bus-route" class="mobile-link">Bus Routes</a></li>
+          <li><a href="/#contact" class="mobile-cta mobile-link">Start Campaign</a></li>
+        </ul>
+      </div>
     </div>
   </header>
 
@@ -90,7 +107,7 @@
           Let's get your campaign back on track.
         </p>
         <div class="error-actions">
-          <a href="index.html" class="btn-primary shadow-glow">
+          <a href="/" class="btn-primary shadow-glow">
             Back to Homepage
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
               stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -98,7 +115,7 @@
               <polyline points="12 5 19 12 12 19" />
             </svg>
           </a>
-          <a href="index.html#contact" class="btn-outline gradient-border glass">
+          <a href="/#contact" class="btn-outline gradient-border glass">
             Contact Us
           </a>
         </div>
@@ -110,7 +127,7 @@
     <div class="container">
       <div class="footer-grid">
         <div class="footer-brand">
-          <a href="index.html" class="nav-logo">
+          <a href="/" class="nav-logo">
             <span class="nav-logo-icon"><img src="assets/logo.png" alt="aDmotion Media"></span>
           </a>
           <p>AdMotion Media Private Limited — transforming Kerala's public transport into an intelligent advertising and
@@ -119,25 +136,28 @@
         <div class="footer-col">
           <div class="footer-col-title">Company</div>
           <ul>
-            <li><a href="index.html#about">About</a></li>
-            <li><a href="index.html#why">Why Us</a></li>
-            <li><a href="index.html#contact">Contact</a></li>
+            <li><a href="/#about">About</a></li>
+            <li><a href="/#why">Why Us</a></li>
+            <li><a href="/#network">Network</a></li>
+            <li><a href="/#contact">Contact</a></li>
+            <li><a href="bus-route">Bus Routes</a></li>
           </ul>
         </div>
         <div class="footer-col">
           <div class="footer-col-title">Services</div>
           <ul>
-            <li><a href="index.html#services">Transit Bus Advertising</a></li>
-            <li><a href="index.html#services">Ad Creation</a></li>
-            <li><a href="index.html#services">Campaign Strategy</a></li>
+            <li><a href="/#services">Transit Bus Advertising</a></li>
+            <li><a href="/#services">Ad Creation</a></li>
+            <li><a href="/#services">Campaign Strategy</a></li>
+            <li><a href="/#nation-news">Nation News Live</a></li>
           </ul>
         </div>
         <div class="footer-col">
           <div class="footer-col-title">Contact</div>
           <ul>
-            <li><a href="index.html#contact">Kalamassery, Ernakulam</a></li>
-            <li><a href="index.html#contact">Mon–Sat · 09:30–17:30</a></li>
-            <li><a href="index.html#contact">hello@admotionmedia.in</a></li>
+            <li><a href="/#contact">Kalamassery, Ernakulam</a></li>
+            <li><a href="/#contact">Mon–Sat · 09:30–17:30</a></li>
+            <li><a href="/#contact">hello@admotionmedia.in</a></li>
           </ul>
         </div>
       </div>

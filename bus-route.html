@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Bus Advertising Routes & Coverage in Kerala | aDmotion Media</title>
+  <link rel="canonical" href="https://admotionmedia.in/bus-route" />
+  <meta name="description"
+    content="Search and explore Kerala bus advertising routes by district, bus name, or stops. Plan your transit media campaigns across Thrissur, Ernakulam, and more." />
+  <meta property="og:title" content="Bus Advertising Routes & Coverage in Kerala | aDmotion Media" />
+  <meta property="og:description"
+    content="Search and explore Kerala bus advertising routes by district, bus name, or stops. Plan your transit media campaigns across Thrissur, Ernakulam, and more." />
+  <link rel="shortcut icon" type="image/x-icon" href="assets/fav-icon.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+
+<body>
+
+  <!-- ── HEADER (shared) ──────────────────────────────────────────────── -->
+  <header class="navbar" id="navbar">
+    <div class="container">
+      <nav class="nav-inner glass-strong" id="nav-inner">
+        <a href="/#home" class="nav-logo">
+          <span class="nav-logo-icon">
+            <img src="assets/logo.png" alt="aDmotion Media">
+          </span>
+        </a>
+        <ul class="nav-links">
+          <li><a href="/#home">Home</a></li>
+          <li><a href="/#about">About</a></li>
+          <li><a href="/#services">Services</a></li>
+          <li><a href="/#why">Why Us</a></li>
+          <li><a href="/#plans">Plans</a></li>
+          <li><a href="/#contact">Contact</a></li>
+          <li><a href="bus-route" class="nav-link-active">Bus Routes</a></li>
+        </ul>
+        <a href="/#contact" class="nav-cta btn-primary">Start Campaign</a>
+        <button class="nav-menu-btn glass" id="menu-btn" aria-label="Menu"></button>
+      </nav>
+      <div class="nav-mobile glass-strong" id="nav-mobile">
+        <ul>
+          <li><a href="/#home" class="mobile-link">Home</a></li>
+          <li><a href="/#about" class="mobile-link">About</a></li>
+          <li><a href="/#services" class="mobile-link">Services</a></li>
+          <li><a href="/#why" class="mobile-link">Why Us</a></li>
+          <li><a href="/#plans" class="mobile-link">Plans</a></li>
+          <li><a href="/#contact" class="mobile-link">Contact</a></li>
+          <li><a href="bus-route" class="mobile-link nav-link-active">Bus Routes</a></li>
+          <li><a href="/#contact" class="mobile-cta mobile-link">Start Campaign</a></li>
+        </ul>
+      </div>
+    </div>
+  </header>
+
+  <!-- ── PAGE CONTENT ─────────────────────────────────────────────────── -->
+  <main>
+    <div class="br-page-header">
+      <h1>Bus <span>Routes</span> &amp; Details</h1>
+      <p>Select a district, then a route to browse available buses across Kerala.</p>
+    </div>
+
+    <div class="br-search-container">
+      <div class="br-select-wrap">
+        <select id="districtSelect">
+          <option value="">Choose District...</option>
+          <option value="Thiruvananthapuram">Thiruvananthapuram</option>
+          <option value="Kollam">Kollam</option>
+          <option value="Pathanamthitta">Pathanamthitta</option>
+          <option value="Alappuzha">Alappuzha</option>
+          <option value="Kottayam">Kottayam</option>
+          <option value="Idukki">Idukki</option>
+          <option value="Ernakulam">Ernakulam</option>
+          <option value="Thrissur">Thrissur</option>
+          <option value="Palakkad">Palakkad</option>
+          <option value="Malappuram">Malappuram</option>
+          <option value="Kozhikode">Kozhikode</option>
+          <option value="Wayanad">Wayanad</option>
+          <option value="Kannur">Kannur</option>
+          <option value="Kasaragod">Kasaragod</option>
+        </select>
+        <span class="select-arrow">▼</span>
+      </div>
+
+      <div class="br-search-wrap-inner">
+        <input type="text" id="searchInput" placeholder="Search districts or routes…" autocomplete="off">
+        <svg class="br-search-icon" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"
+          viewBox="0 0 24 24">
+          <circle cx="11" cy="11" r="8" />
+          <path d="m21 21-4.35-4.35" />
+        </svg>
+      </div>
+    </div>
+
+    <div class="br-container">
+      <div class="br-search-count" id="searchCount"></div>
+
+      <!-- LEVEL 1: KERALA DISTRICTS -->
+      <div id="view-districts" class="br-view-panel">
+        <div class="br-section-header">
+          <span class="br-section-title">Kerala Districts</span>
+          <span class="br-section-badge">14 Districts</span>
+        </div>
+        <div class="br-districts-grid" id="districtsGrid"></div>
+      </div>
+
+      <!-- LEVEL 2: ROUTES WITHIN A DISTRICT -->
+      <div id="view-routes" class="br-view-panel">
+        <div class="br-breadcrumb">
+          <span class="crumb" onclick="showDistricts()">Kerala</span>
+          <span class="sep">›</span>
+          <span class="current" id="bc-district-name">–</span>
+        </div>
+        <div class="br-section-header">
+          <button class="br-back-btn" onclick="showDistricts()">
+            <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M19 12H5M12 5l-7 7 7 7"/></svg>
+            Back
+          </button>
+          <span class="br-section-title" id="routesTitle">Routes</span>
+          <span class="br-section-badge" id="routesCount">–</span>
+        </div>
+        <div class="br-routes-grid" id="routesGrid"></div>
+      </div>
+
+      <!-- LEVEL 3: BUSES ON A ROUTE -->
+      <div id="view-buses" class="br-view-panel">
+        <div class="br-breadcrumb">
+          <span class="crumb" onclick="showDistricts()">Kerala</span>
+          <span class="sep">›</span>
+          <span class="crumb" id="bc-district2" onclick="goBackToRoutes()">–</span>
+          <span class="sep">›</span>
+          <span class="current" id="bc-route-name">–</span>
+        </div>
+        <div class="br-section-header">
+          <button class="br-back-btn" onclick="goBackToRoutes()">
+            <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M19 12H5M12 5l-7 7 7 7"/></svg>
+            Back
+          </button>
+          <span class="br-section-title" id="busesTitle">Buses</span>
+          <span class="br-section-badge" id="busesCount">–</span>
+        </div>
+        <div class="br-buses-grid" id="busesGrid"></div>
+      </div>
+
+      <!-- LEVEL 4: BUS DETAIL -->
+      <div id="view-bus" class="br-view-panel">
+        <div class="br-breadcrumb">
+          <span class="crumb" onclick="showDistricts()">Kerala</span>
+          <span class="sep">›</span>
+          <span class="crumb" id="bc-district3" onclick="goBackToRoutes()">–</span>
+          <span class="sep">›</span>
+          <span class="crumb" id="bc-route2" onclick="goBackToBuses()">–</span>
+          <span class="sep">›</span>
+          <span class="current" id="bc-bus-name">–</span>
+        </div>
+        <div style="margin-bottom: 20px;">
+          <button class="br-back-btn" onclick="goBackToBuses()">
+            <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M19 12H5M12 5l-7 7 7 7"/></svg>
+            Back to Buses
+          </button>
+        </div>
+        <div class="bus-detail-card" id="busDetailCard"></div>
+      </div>
+    </div>
+  </main>
+
+  <!-- ── FOOTER (shared) ──────────────────────────────────────────────── -->
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="/#home" class="nav-logo">
+            <span class="nav-logo-icon"><img src="assets/logo.png" alt="aDmotion Media"></span>
+          </a>
+          <p>AdMotion Media Private Limited — transforming Kerala's public transport into an intelligent advertising and
+            infotainment platform.</p>
+        </div>
+        <div class="footer-col">
+          <div class="footer-col-title">Company</div>
+          <ul>
+            <li><a href="/#about">About</a></li>
+            <li><a href="/#why">Why Us</a></li>
+            <li><a href="/#network">Network</a></li>
+            <li><a href="/#contact">Contact</a></li>
+            <li><a href="bus-route">Bus Routes</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <div class="footer-col-title">Services</div>
+          <ul>
+            <li><a href="/#services">Transit Bus Advertising</a></li>
+            <li><a href="/#services">Ad Creation</a></li>
+            <li><a href="/#services">Campaign Strategy</a></li>
+            <li><a href="/#nation-news">Nation News Live</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <div class="footer-col-title">Contact</div>
+          <ul>
+            <li><a href="/#contact">Kalamassery, Ernakulam</a></li>
+            <li><a href="/#contact">Mon–Sat · 09:30–17:30</a></li>
+            <li><a href="/#contact">hello@admotionmedia.in</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p id="footer-year"></p>
+        <span class="footer-image-sb">
+          <p>Designed By</p><a href="https://mpxcode.com/" target="_blank"><img src="assets/mindpixel.webp"
+              alt="mindpixel" width="180" height="180" /></a>
+        </span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Enquiry Popup Modal -->
+  <div id="enquiryModal" class="modal-overlay" style="display: none;">
+    <div class="modal-container glass-strong">
+      <button class="modal-close-btn" id="modalCloseBtn" aria-label="Close Modal">&times;</button>
+      <div class="modal-header">
+        <h3>Enquire About <span id="enquiryTargetText">Campaign</span></h3>
+        <p>Send your requirements and our team will get in touch with you.</p>
+      </div>
+      <form id="enquiry-form" action="submit.php" method="POST">
+        <!-- Hidden inputs to identify what they are enquiring about -->
+        <input type="hidden" name="enquiry_type" id="enquiryTypeInput" value="general">
+        <input type="hidden" name="district_name" id="enquiryDistrictInput" value="">
+        <input type="hidden" name="route_name" id="enquiryRouteInput" value="">
+        <input type="hidden" name="bus_name" id="enquiryBusInput" value="">
+        <input type="hidden" name="bus_reg" id="enquiryRegInput" value="">
+
+        <div class="form-grid">
+          <label class="form-field"><span>Full name</span><input type="text" name="name" placeholder="Your name"
+              required></label>
+          <label class="form-field"><span>Company</span><input type="text" name="company"
+              placeholder="Brand or agency" required></label>
+          <label class="form-field"><span>Email</span><input type="email" name="email" placeholder="you@brand.com"
+              required></label>
+          <label class="form-field"><span>Phone</span><input type="tel" name="phone" placeholder="+91"
+              required></label>
+        </div>
+        <div class="form-textarea">
+          <label class="form-field">
+            <span>Tell us about your goals</span>
+            <textarea name="message" rows="4" placeholder="Routes, districts, timing, KPIs..."
+              required></textarea>
+          </label>
+        </div>
+        <button type="submit" class="form-submit shadow-glow" id="enquiry-submit-btn">
+          Submit Enquiry
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="5" y1="12" x2="19" y2="12" />
+            <polyline points="12 5 19 12 12 19" />
+          </svg>
+        </button>
+      </form>
+      <div id="enquiry-form-message"></div>
+    </div>
+  </div>
+
+  <!-- ── SCRIPTS ───────────────────────────────────────────────────────── -->
+  <script src="js/main.js?v=1.0.4" defer></script>
+  <script src="js/bus-route.js?v=1.0.4" defer></script>
+
+</body>
+
+</html>

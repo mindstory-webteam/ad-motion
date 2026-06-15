@@ -5,14 +5,12 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Bus Advertising in Kerala | Transit Media Network | aDmotion Media</title>
-  <link rel="canonical" href="https://admotionmedia.in" />
+  <link rel="canonical" href="https://admotionmedia.in/" />
   <meta name="description"
-    content="Reach 2.1M+ daily viewers with Kerala's largest transit media network. Government-approved bus advertising, digital transit ads, infotainment screens, and geo-targeted campaigns across 1,400+ buses." />
+    content="Reach 2.1M+ daily viewers with Kerala's largest transit media network. Government-approved bus advertising, digital transit screens, and geo-targeted campaigns across 1,400+ buses." />
   <meta property="og:title" content="Bus Advertising in Kerala | Transit Media Network | aDmotion Media" />
   <meta property="og:description"
-    content="Reach 2.1M+ daily viewers with Kerala's largest transit media network. Government-approved bus advertising, digital transit ads, infotainment screens, and geo-targeted campaigns across 1,400+ buses." />
-
-  <link rel="canonical" href="https://admotionmedia.in/" />
+    content="Reach 2.1M+ daily viewers with Kerala's largest transit media network. Government-approved bus advertising, digital transit screens, and geo-targeted campaigns across 1,400+ buses." />
   <link rel="shortcut icon" type="image/x-icon" href="assets/fav-icon.png" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -30,11 +28,13 @@
           </span>
         </a>
         <ul class="nav-links">
+          <li><a href="#home">Home</a></li>
           <li><a href="#about">About</a></li>
           <li><a href="#services">Services</a></li>
           <li><a href="#why">Why Us</a></li>
           <li><a href="#plans">Plans</a></li>
           <li><a href="#contact">Contact</a></li>
+          <li><a href="bus-route">Bus Routes</a></li>
         </ul>
         <a href="#contact" class="nav-cta btn-primary">Start Campaign</a>
         <button class="nav-menu-btn glass" id="menu-btn" aria-label="Menu">
@@ -42,11 +42,13 @@
       </nav>
       <div class="nav-mobile glass-strong" id="nav-mobile">
         <ul>
+          <li><a href="#home" class="mobile-link">Home</a></li>
           <li><a href="#about" class="mobile-link">About</a></li>
           <li><a href="#services" class="mobile-link">Services</a></li>
           <li><a href="#why" class="mobile-link">Why Us</a></li>
           <li><a href="#plans" class="mobile-link">Plans</a></li>
           <li><a href="#contact" class="mobile-link">Contact</a></li>
+          <li><a href="bus-route" class="mobile-link">Bus Routes</a></li>
           <li><a href="#contact" class="mobile-cta mobile-link">Start Campaign</a></li>
         </ul>
       </div>
@@ -987,6 +989,7 @@
             <li><a href="#why">Why Us</a></li>
             <li><a href="#network">Network</a></li>
             <li><a href="#contact">Contact</a></li>
+            <li><a href="bus-route">Bus Routes</a></li>
           </ul>
         </div>
         <div class="footer-col">
@@ -1017,18 +1020,19 @@
     </div>
   </footer>
 
-  <script src="js/main.js" defer></script>
+  <script src="js/main.js?v=1.0.2" defer></script>
   <script>
     document.getElementById('contact-form').addEventListener('submit', async function (e) {
 
       e.preventDefault();
 
-      const form = this;
+      const form      = this;
       const submitBtn = document.getElementById('submit-btn');
       const messageBox = document.getElementById('form-message');
+      const originalHTML = submitBtn.innerHTML;
 
-      submitBtn.disabled = true;
-      submitBtn.innerText = 'Sending...';
+      submitBtn.disabled  = true;
+      submitBtn.innerText = 'Sending…';
 
       try {
 
@@ -1041,25 +1045,23 @@
 
         if (data.status === 'success') {
 
-          messageBox.innerHTML =
-            '<div class="success-message">' + data.message + '</div>';
-
+          messageBox.innerHTML = '<div class="success-message">' + data.message + '</div>';
           form.reset();
 
         } else {
 
-          messageBox.innerHTML =
-            '<div class="error-message">' + data.message + '</div>';
+          // Show debug info if available (remove "data.debug" part in production)
+          const debugInfo = data.debug ? '<br><small style="opacity:.6">Server: ' + data.debug + '</small>' : '';
+          messageBox.innerHTML = '<div class="error-message">' + data.message + debugInfo + '</div>';
         }
 
       } catch (error) {
 
-        messageBox.innerHTML =
-          '<div class="error-message">Something went wrong. Please try again.</div>';
+        messageBox.innerHTML = '<div class="error-message">Something went wrong. Please try again.</div>';
       }
 
-      submitBtn.disabled = false;
-      submitBtn.innerHTML = 'Request Free Consultation';
+      submitBtn.disabled  = false;
+      submitBtn.innerHTML = originalHTML; // Restore full button content including icon
     });
   </script>
 
