@@ -1,4 +1,4 @@
-// ── DATA ──────────────────────────────────────────────────────────────────────
+// DATA
 // Structure: DISTRICTS[districtName][routeName] = [buses]
 const DISTRICTS_LIST = [
     "Thiruvananthapuram", "Kollam", "Pathanamthitta", "Alappuzha",
@@ -156,10 +156,10 @@ const DATA = {
     }
 };
 
-// ── STATE ─────────────────────────────────────────────────────────────────────
+// STATE
 let state = { district: null, route: null };
 
-// ── FLAT LIST FOR SEARCH ───────────────────────────────────────────────────────
+// FLAT LIST FOR SEARCH
 const allBuses = [];
 for (const [dist, routes] of Object.entries(DATA)) {
     for (const [route, buses] of Object.entries(routes)) {
@@ -167,10 +167,10 @@ for (const [dist, routes] of Object.entries(DATA)) {
     }
 }
 
-// ── ICONS ─────────────────────────────────────────────────────────────────────
+// ICONS
 const iconReg = `<svg width="11" height="11" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="3" y="6" width="18" height="12" rx="2"/><path d="M7 10h10M7 14h6"/></svg>`;
 
-// ── VIEW HELPERS ───────────────────────────────────────────────────────────────
+// VIEW HELPERS
 function showView(id) {
     ['view-districts', 'view-routes', 'view-buses', 'view-bus'].forEach(v => {
         const el = document.getElementById(v);
@@ -204,7 +204,7 @@ function showView(id) {
     window.scrollTo(0, 0);
 }
 
-// ── LEVEL 1: DISTRICTS ────────────────────────────────────────────────────────
+// LEVEL 1: DISTRICTS
 function showDistricts() {
     window.location.hash = '/';
 }
@@ -285,7 +285,7 @@ function renderDistricts() {
     }
 }
 
-// ── LEVEL 2: ROUTES ───────────────────────────────────────────────────────────
+// LEVEL 2: ROUTES
 function showRoutes(district) {
     window.location.hash = '/' + encodeURIComponent(district);
 }
@@ -336,7 +336,7 @@ function goBackToRoutes() {
     }
 }
 
-// ── LEVEL 3: BUSES ────────────────────────────────────────────────────────────
+// LEVEL 3: BUSES
 function showBuses(district, route) {
     window.location.hash = '/' + encodeURIComponent(district) + '/' + encodeURIComponent(route);
 }
@@ -353,7 +353,7 @@ function showBusesInternal(district, route) {
     showView('view-buses');
 }
 
-// ── DATA AND BINDINGS ─────────────────────────────────────────────────────────
+// DATA AND BINDINGS
 function renderBuses(district, route) {
     const buses = (DATA[district] || {})[route] || [];
     document.getElementById('busesTitle').textContent = route;
@@ -381,7 +381,7 @@ function goBackToBuses() {
     }
 }
 
-// ── LEVEL 4: BUS DETAIL ───────────────────────────────────────────────────────
+// LEVEL 4: BUS DETAIL
 function showBusDetail(district, route, sl) {
     window.location.hash = '/' + encodeURIComponent(district) + '/' + encodeURIComponent(route) + '/' + sl;
 }
@@ -425,7 +425,7 @@ function showBusDetailInternal(district, route, sl) {
     showView('view-bus');
 }
 
-// ── HASH ROUTER ───────────────────────────────────────────────────────────────
+// HASH ROUTER
 function renderViewFromHash() {
     const hash = window.location.hash;
     if (!hash || hash === '#' || hash === '#/') {
@@ -468,7 +468,7 @@ function renderViewFromHash() {
     showBusDetailInternal(district, route, busSl);
 }
 
-// ── SEARCH ────────────────────────────────────────────────────────────────────
+// SEARCH
 let searchTimeout;
 document.getElementById('searchInput').addEventListener('input', function () {
     clearTimeout(searchTimeout);
@@ -557,8 +557,8 @@ function clearSearch() {
     document.getElementById('searchCount').innerHTML = '';
 }
 
-// ── INIT ──────────────────────────────────────────────────────────────────────
-// ── ENQUIRY MODAL FUNCTIONALITY ───────────────────────────────────────────────
+// INIT
+// ENQUIRY MODAL FUNCTIONALITY
 function openEnquiryModal(type, targetName, district = '', route = '', busName = '', busReg = '') {
     console.log("openEnquiryModal setting inputs to:", { type, targetName, district, route, busName, busReg });
     const modal = document.getElementById('enquiryModal');
