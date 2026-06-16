@@ -1562,6 +1562,7 @@ button {
   border-radius: 1.5rem;
   padding: 1.75rem;
   transition: transform 0.5s;
+  height: 100%;
 }
 
 .pricing-card:hover {
