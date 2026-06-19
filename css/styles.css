@@ -2544,6 +2544,8 @@ svg {
   transition: background 0.2s, border-color 0.2s, transform 0.15s;
   position: relative;
   overflow: hidden;
+  display: flex;
+  flex-direction: column;
 }
 
 .district-card::before {
@@ -2660,6 +2662,8 @@ svg {
   cursor: pointer;
   transition: background 0.2s, border-color 0.2s, transform 0.15s;
   position: relative;
+  display: flex;
+  flex-direction: column;
 }
 
 .route-card:hover {
@@ -2699,12 +2703,26 @@ svg {
   padding: 22px 24px;
   cursor: pointer;
   transition: background 0.2s, border-color 0.2s, transform 0.15s;
+  display: flex;
+  flex-direction: column;
 }
 
 .bus-card:hover {
   background: var(--secondary);
   border-color: oklch(1 0 0 / 0.18);
   transform: translateY(-2px);
+}
+
+.district-card-content,
+.route-card-content,
+.bus-card-content {
+  margin-bottom: 12px;
+}
+
+.district-card .br-card-action-btn,
+.route-card .br-card-action-btn,
+.bus-card .br-card-action-btn {
+  margin-top: auto;
 }
 
 .bus-card-name {

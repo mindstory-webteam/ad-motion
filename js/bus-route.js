@@ -255,11 +255,16 @@ function renderDistricts() {
         const totalBuses = hasData ? routes.reduce((sum, r) => sum + DATA[d][r].length, 0) : 0;
         if (hasData) {
             return `<div class="district-card has-data" onclick="showRoutes('${d}')">
-        <h3>${d}</h3>
-        <div class="district-meta">
-          <div class="district-meta-item"><span class="meta-label">Routes</span><span class="meta-value">${routes.length}</span></div>
-          <div class="district-meta-item"><span class="meta-label">Buses</span><span class="meta-value">${totalBuses}</span></div>
+        <div class="district-card-content">
+          <h3>${d}</h3>
+          <div class="district-meta">
+            <div class="district-meta-item"><span class="meta-label">Routes</span><span class="meta-value">${routes.length}</span></div>
+            <div class="district-meta-item"><span class="meta-label">Buses</span><span class="meta-value">${totalBuses}</span></div>
+          </div>
         </div>
+        <button class="br-card-action-btn" onclick="showRoutes('${d}'); event.stopPropagation();">
+          View Routes
+        </button>
         <span class="district-arrow">›</span>
       </div>`;
         } else {
@@ -305,13 +310,15 @@ function showRoutesInternal(district) {
 
 function routeCardHTML(district, r, busesLength, ops) {
     return `<div class="route-card" onclick="showBuses('${district}','${r}')">
-      <h3>${r}</h3>
-      <div class="district-meta">
-        <div class="district-meta-item"><span class="meta-label">Buses</span><span class="meta-value">${busesLength}</span></div>
-        <div class="district-meta-item"><span class="meta-label">Operators</span><span class="meta-value">${ops}</span></div>
+      <div class="route-card-content">
+        <h3>${r}</h3>
+        <div class="district-meta">
+          <div class="district-meta-item"><span class="meta-label">Buses</span><span class="meta-value">${busesLength}</span></div>
+          <div class="district-meta-item"><span class="meta-label">Operators</span><span class="meta-value">${ops}</span></div>
+        </div>
       </div>
-      <button class="br-card-action-btn" onclick="openRouteEnquiry(event, '${district}', '${r}')">
-        Enquire Route
+      <button class="br-card-action-btn" onclick="showBuses('${district}','${r}'); event.stopPropagation();">
+        View Buses
       </button>
       <span class="district-arrow">›</span>
     </div>`;
@@ -369,9 +376,14 @@ function busCardHTML(b, district, route) {
     const d = district || b.district;
     const r = route || b.route_area || b.district;
     return `<div class="bus-card" onclick="showBusDetail('${d}','${r}',${b.sl})">
-    <div class="bus-card-name"><span class="sl-badge">#${b.sl}</span>${b.name}</div>
-    <div class="bus-card-reg">${iconReg}&nbsp;${b.reg}</div>
-    ${stopsHTML}
+    <div class="bus-card-content">
+      <div class="bus-card-name"><span class="sl-badge">#${b.sl}</span>${b.name}</div>
+      <div class="bus-card-reg">${iconReg}&nbsp;${b.reg}</div>
+      ${stopsHTML}
+    </div>
+    <button class="br-card-action-btn" onclick="showBusDetail('${d}','${r}',${b.sl}); event.stopPropagation();">
+      View More
+    </button>
   </div>`;
 }
 
